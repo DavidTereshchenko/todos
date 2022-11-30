@@ -24,12 +24,10 @@ function App() {
 
   useEffect(() => {
     setFiltered(todos)
-    console.log(111, todos)
     setActiveAmount(countActiveTodos())
   }, [todos])
 
   const filterList = (filterType) => {
-    console.log(1111, todos)
     switch(filterType) {  
       case 'active':
         let activeTodo = [...todos].filter( item => !item.completed )

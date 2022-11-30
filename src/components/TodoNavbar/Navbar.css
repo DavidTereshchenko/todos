@@ -1,0 +1,11 @@
+.header {
+    padding-top: 40px;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+    font-weight: 100px;
+};
+
+.title {
+    font-size: 100px;
+    font-weight: 100px;
+}

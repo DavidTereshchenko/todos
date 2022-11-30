@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import {AddTodo} from './components/TodoItem/AddTodo';
+import { Navbar } from './components/TodoNavbar/Navbar';
+import { Todo } from './components/TodosInput/Todo';
+import './App.css'
 
 function App() {
+  const [todos, setTodos] = useState([])
+
+  const addTodo = (title) => {
+    setTodos(prev => [...prev, {
+      id: Date.now().toString(),
+      title
+    } ])
+  }
+
+  const removeTodo = id => {
+    setTodos(prev => prev.filter(todo => todo.id !== id))
+  }
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar title="todos"/>
+      <AddTodo onSubmit={addTodo}/>
+      <div>
+        {todos.map(todo => (
+          <Todo todo={todo} key={todo.id} onRemove={removeTodo} setTodos={setTodos} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

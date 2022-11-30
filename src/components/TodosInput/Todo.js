@@ -10,8 +10,7 @@ export const Todo = ({todo, todos, setTodos, onRemove }) => {
     const pressSave = () => {
         todo.title = changeTodo
         const newTodos = todos.map(element => element.id === todo.id ? todo : element)
-        console.log(newTodos)
-        // setTodos(newTodos)
+        setTodos(newTodos)
         setTextEdit(!textEdit)
     }
 

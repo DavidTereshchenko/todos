@@ -25,7 +25,7 @@ function App() {
       <AddTodo onSubmit={addTodo}/>
       <div>
         {todos.map(todo => (
-          <Todo todo={todo} key={todo.id} onRemove={removeTodo} setTodos={setTodos} />
+          <Todo todo={todo} key={todo.id} onRemove={removeTodo} setTodos={setTodos} todos={todos} />
         ))}
       </div>
     </div>

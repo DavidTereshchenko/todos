@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import'./AddTodo.css'
 
 export const AddTodo = ({onSubmit}) => {
@@ -18,6 +18,7 @@ export const AddTodo = ({onSubmit}) => {
             pressHandler()
         }
     }
+    
     return(
         <div className="AddTodo">
             <input

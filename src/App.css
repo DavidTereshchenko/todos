@@ -13,3 +13,27 @@ body {
     height: 100vh;
 
 }
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 100;
+    padding: 15px;
+    background-color: white;
+    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    color: #777777;
+}
+
+.clear-completed button {
+    border: none;
+    background-color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: #777777;
+    cursor: pointer;
+}

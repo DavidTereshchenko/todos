@@ -1,0 +1,17 @@
+.filter-items {
+    display: flex;
+    align-items: center;
+}
+
+.filter-item a {
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+    padding: 3px 7px;
+    color: #777777;
+    border-radius: 3px;
+}
+
+.filter-item a.active {
+    border: 1px solid rgba(175, 47, 47, 0.2);
+}

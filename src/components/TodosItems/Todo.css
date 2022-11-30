@@ -40,6 +40,7 @@
 
 .todo-item label {
     padding: 15px 15px 15px 10px;
+    width: 420px
 }
 
 .remove button {
@@ -59,11 +60,12 @@
 }
 
 .text-edit {
-    width: 100%;
+    width: 500px;
     font-size: 24px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 100;
-    padding: 16px 16px 16px 60px;
+    padding: 16px 16px 16px 10px;
+    margin-left: 50px;
     box-shadow: inset 5px 5px 5px  rgb(0 0 0 / 5%);
     border: 1px solid #000;
     box-sizing: border-box;   

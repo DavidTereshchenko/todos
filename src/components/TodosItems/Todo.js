@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import './Todo.css'
 
-export const Todo = ({todo, todos, setTodos, onRemove }) => {
+
+
+export const Todo = ({ todo, todos, setTodos, onRemove }) => {
 
     const [checked, setChecked] = useState(false)
     const [textEdit, setTextEdit] = useState(true)
@@ -9,7 +11,7 @@ export const Todo = ({todo, todos, setTodos, onRemove }) => {
 
     const pressSave = () => {
         todo.title = changeTodo
-        const newTodos = todos.map(element => element.id === todo.id ? todo : element)
+        let newTodos = todos.map(element => element.id === todo.id ? todo : element)
         setTodos(newTodos)
         setTextEdit(!textEdit)
     }
@@ -30,19 +32,32 @@ export const Todo = ({todo, todos, setTodos, onRemove }) => {
     const pressKey = event => {
         if(event.key === 'Enter') {
             pressSave()
-        }
+        } 
+    }
+
+    const onPressCheckBox = () => {
+        setTodos(
+            todos.map(item => {
+                if (item.id === todo.id) {
+                    item.completed = !item.completed
+                }
+
+                return item
+            })
+        )
+        setChecked(!checked)
     }
 
     if(textEdit) {
         return (
-            <div className="todo-item" onDoubleClick={pressHandler}>
+            <div className="todo-item">
                 <div className="new-todo">
-                    <input className="checkbox" type="checkbox" id="myCheck" checked={checked} onChange={handleChange}/>
-                    <label>{todo.title}</label>
+                    <input className="checkbox" type="checkbox"  checked={checked} onChange={handleChange} onClick={onPressCheckBox}/>
+                    <label onDoubleClick={pressHandler}>{todo.title}</label>
                 </div>
                 <div className="remove">
                     <button onClick={removeHandler}>×</button>
-                </div>    
+                </div> 
             </div>
         )   
     } else { 
